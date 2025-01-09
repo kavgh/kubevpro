@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: vpromc
-  type: ClusterIp
+  type: ClusterIP
   ports:
   - port: 11211
     targetPort: vpromc-port
