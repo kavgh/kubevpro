@@ -13,18 +13,18 @@ spec:
     metadata:
       labels:
         app: vprormq
-  spec:
-    containers:
-    - name: vprormq
-      image: rabbitmq
-      env:
-      - name: RABBITMQ_DEFAULT_USER
-        value: "guest"
-      - name: RABBITMQ_DEFAULT_PASS
-        valueFrom:
-          secretKeyRef:
-            name: app-secret
-            key: rmq-pass
-      ports:
-      - name: vprormq-port
-        containerPort: 5672
+    spec:
+      containers:
+      - name: vprormq
+        image: rabbitmq
+        env:
+        - name: RABBITMQ_DEFAULT_USER
+          value: "guest"
+        - name: RABBITMQ_DEFAULT_PASS
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: rmq-pass
+        ports:
+        - name: vprormq-port
+          containerPort: 5672
